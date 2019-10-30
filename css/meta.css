@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --dark-green: #666437;
+    --dark-blue: #29414D;
+    --mid-red: #A67B80;
+    --light-blue: #6886B0;
+    --yellow: #E5E287;
+    --grey: #63899A;
+    --underwhite: rgb(233, 233, 233);
+    /* Цвета dark-green, mid-red, yellow и light-blue в актуальную версию не попали, но возможна замена всей цветовой схемы на них. */
+    --serif: 'Playfair Display', serif;
+    --sans-serif: 'Roboto', sans-serif;
+    --sfs: 24px;
+}
