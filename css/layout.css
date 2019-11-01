@@ -107,10 +107,17 @@ margin-bottom: var(--sfs);
     margin-left: 5px;
 }
 .info__ul li:nth-child(1):before{
-    content: "\1F355";
+    content: "\1F921";
+}
+.info__ul li:nth-child(2):before{
+    content: "\1F4A4";
 }
 .info__ul li:nth-child(3):before{
-    content: "\2603";
+    content: "\2708";
+}
+.info__ul li:nth-child(4):before{
+    content: "\26F1";
+}
 }
 .info__ul:after{
     content: '';
