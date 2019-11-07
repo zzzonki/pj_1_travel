@@ -136,3 +136,7 @@ margin-bottom: var(--sfs);
     align-items: center;
 }
 /*  о нас через список все */
+.form_wrapper{
+    width: 1200px;
+    margin: 0 auto;
+}

@@ -59,3 +59,133 @@
 .footer__logo:hover{
     animation-play-state: paused;
 }
+/* Анимация с летящим человечком */
+@keyframes man-anim{
+    0%{
+        top: 0;
+        left: 0;
+    }
+    100%{
+        top: -20px;
+        left: -5px;
+    }
+}
+@keyframes fire-anim{
+    0%{
+        transform:rotate(15deg);
+    }
+    100%{
+        transform:rotate(-15deg);
+    }
+}
+@keyframes big-cloud-anim{
+    0%{
+        top: -70px;
+        left: 0;
+    }
+    100%{
+        top: 500px;
+        left: 100px;
+    }
+}
+@keyframes medium-cloud-anim{
+    0%{
+        top: -60px;
+        left: 0;
+    }
+    100%{
+        top: 500px;
+        left: 150px;
+    }
+}
+@keyframes small-cloud-anim{
+    0%{
+        top: -40px;
+        left: 0;
+    }
+    100%{
+        top: 500px;
+        left: 50px;
+    }
+}
+.footer-anim{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+.man{
+    position: relative;
+    width: 100px;
+    height: 200px;
+    animation: man-anim 0.7s ease-in-out infinite alternate;
+}
+.man-body{
+    height: 200px;
+    width: 100px;
+    background: url(img/hombre.png) center center / contain no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    
+}
+.man-fire{
+    height: 30px;
+    width: 25px;
+    background: url(img/fuego.png) center center / contain no-repeat;
+    position: absolute;
+    right: 0px;
+    bottom: 20px;
+    z-index: 1;
+    animation: fire-anim 0.05s linear infinite alternate;
+}
+.left-cloud{
+    height: 300px;
+    width: 33%;
+    position: relative;
+
+}
+.big-cloud{
+    width: 100px;
+    height: 80px;
+    background: url(img/nube1.png) no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.big-cloud-left{
+    animation: big-cloud-anim 1.5s linear infinite;
+}
+.big-cloud-right{
+    animation: big-cloud-anim 1s linear infinite;
+}
+.medium-cloud{
+    width: 55px;
+    height: 50px;
+    background: url(img/nube3.png) no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.medium-cloud-left{
+    animation: medium-cloud-anim 1.8s linear infinite;
+}
+.medium-cloud-right{
+    animation: medium-cloud-anim 1.3s linear infinite;
+}
+.small-cloud{
+    width: 36px;
+    height: 30px;
+    background: url(img/nube2.png) no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: small-cloud-anim 1.5s linear infinite;
+}

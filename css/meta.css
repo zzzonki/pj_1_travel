@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+html{
+    scroll-behavior: smooth;
+}
 :root{
     --dark-green: #666437;
     --dark-blue: #29414D;

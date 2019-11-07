@@ -16,6 +16,11 @@
             <a href="#contacts">Контакты</a>
         </nav>
     </header>
+    <div class="side_nav">
+        <a class="side_nav__a" href="#info">Главная</a>
+        <a class="side_nav__a" href="#ao">О нас</a>
+        <a class="side_nav__a" href="#contacts">Контакты</a>
+    </div>
     <div class="promo">
         <div class="action">
             <h3 class="action__h3">
@@ -169,6 +174,19 @@
                 <div class="card__p">Посмотри на мир вниз головой</div>
             </div>
     </section>
+    <section class="form_wrapper">
+        <h3 class="form__h3">Оставьте заявку</h3>
+        <form action="post.php" method="POST">
+            <label for="name">Ваше имя</label>
+            <input type="text" name="name" placeholder="Ваше имя" required minlength="2" maxlength="16">
+            <label for="surname">Ваша фамилия</label>
+            <input type="text" name="surname" placeholder="Ваша фамилия" minlength="2" maxlength="16">
+            <label for="telephone">Ваш номер телефона</label>
+            <input type="tel" name="telephone" placeholder="Ваш номер телефона" required minlength="7" maxlength="12">
+            <textarea name="messege" cols="40" rows="5" placeholder="Ваше сообщение"></textarea>
+            <button type="submit">Отправить</button>
+        </form>
+    </section>
     <!-- Блоки в классе конец -->
     <footer id="contacts">
         <div class="footer_wrap">
@@ -185,16 +203,32 @@
                 <a href="https://instagram.com" target="blank"><div class="soc_icons soc_icons_inst"></div></a>
             </div>
         </div>
-            <div class="footer__logo">
-            </div>
-            <ul class="footer__ul">
-                <li>Путешествия по Украине</li>
-                <li>Путешествия по Китаю</li>
-                <li>Путешествия по Финляндии</li>
-                <li>Путешествия по Норвегии</li>
-                <li>Путешествия по Швеции</li>
-            </ul>
+        <div class="footer__logo">
         </div>
+        <!-- Анимация с летящим человечком начало -->
+        <!-- <div class="footer-anim">
+            <div class="left-cloud">
+                <div class="big-cloud big-cloud-left"></div>
+                <div class="medium-cloud medium-cloud-left"></div>
+            </div>
+            <div class="man">
+                <div class="man-body"></div>
+                <div class="man-fire"></div>
+            </div>
+            <div class="left-cloud">
+                <div class="big-cloud big-cloud-right"></div>
+                <div class="small-cloud"></div>
+                <div class="medium-cloud medium-cloud-right"></div>
+            </div>
+        </div> -->
+        <ul class="footer__ul">
+            <li>Путешествия по Украине</li>
+            <li>Путешествия по Китаю</li>
+            <li>Путешествия по Финляндии</li>
+            <li>Путешествия по Норвегии</li>
+            <li>Путешествия по Швеции</li>
+        </ul>
+    </div>
     </footer>
 </body>
 </html>

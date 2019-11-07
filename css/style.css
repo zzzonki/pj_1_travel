@@ -3,6 +3,7 @@
 @import 'layout.css';
 @import 'cards.css';
 @import 'footer.css';
-/* @import 'anim.css';
-@import 'animate.css'; */
-/* Доделать картинки в о нас, цвета и лого в футере и размеры шрифтов */
+@import 'anim.css';
+@import 'animate.css';
+@import 'form.css';
+/* Доделать размеры шрифтов */
