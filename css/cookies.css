@@ -4,7 +4,7 @@
     bottom: 0%;
     z-index: 999;
     height: 150px;
-    width: 100vw;
+    width: 100%;
     background-color: rgba(41, 65, 77, 0.6);
     display: flex;
     justify-content: space-between;
@@ -49,13 +49,21 @@
 }
 .cookie__exit{
     color: white;
-    width: 40px;
-    height: 40px;
+    font-size: 28px;
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
     display: flex;
     justify-content: center;
+    align-items: center;
     font-weight: bolder;
-    margin-bottom: 100px;
-    margin-right: 2vw;
+    margin-bottom: 100px;   
+}
+/* модифициорванный крестик для формы захвата */
+.form__exit{
+    position: absolute;
+    right: 35%;
+    top: 20%;
 }
 .cookie__exit:hover{
     background-color: var(--dark-blue);
@@ -63,7 +71,7 @@
     color: var(--underwhite);
 }
 /* Куки в классе */
-.ck_warning{
+/* .ck_warning{
     position: fixed;
     bottom: 0%;
     background-color: rgba(41, 65, 77, 0.6);
@@ -96,4 +104,4 @@
 .form__cross{
     right: 35%;
     top: 20%;
-}
+} */

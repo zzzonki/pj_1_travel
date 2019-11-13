@@ -11,6 +11,7 @@
     background-position: 55% 65%;
     width: 100%;
     display: none;
+    z-index: 9;
 }
 .form__h3{
     font-family: var(--serif);
@@ -36,6 +37,7 @@
     text-align: center;
     margin: 5px 0 10px 0;
     font-family: var(--serif);
+    color: white;
 }
 .form_wrapper input, textarea{
     width: 250px;
