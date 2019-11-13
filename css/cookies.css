@@ -1,3 +1,4 @@
+/* Куки самостоятельно */
 .cookie{
     position: fixed;
     bottom: 0%;
@@ -60,4 +61,39 @@
     background-color: var(--dark-blue);
     cursor: pointer;
     color: var(--underwhite);
+}
+/* Куки в классе */
+.ck_warning{
+    position: fixed;
+    bottom: 0%;
+    background-color: rgba(41, 65, 77, 0.6);
+    height: 150px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ck_warning__h3{
+    color: white;
+    width: 300px;
+    background: var(--dark-blue);
+    padding: 10px;
+    border-radius: 3px;
+    align-items: center;
+}
+.ck_warning__cross{
+    position: absolute;
+    top: 10px;
+    right: 1px;
+}
+.ck_warning__cross:hover{
+    color:red
+}
+.ck_warning__cross i{
+    font-size: 32px;
+    cursor: pointer;
+}
+.form__cross{
+    right: 35%;
+    top: 20%;
 }

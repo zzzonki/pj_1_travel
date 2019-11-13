@@ -2,11 +2,15 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    position: fixed;
+    top: 0%;
     padding: 30px 0;
-    background-image: url(../img/bg-input.jpg);
+    /* background-image: url(../img/bg-input.jpg); */
     background-repeat: no-repeat;
     background-size: 144%;
     background-position: 55% 65%;
+    width: 100%;
+    display: none;
 }
 .form__h3{
     font-family: var(--serif);
@@ -21,7 +25,8 @@
     align-items: center;
     padding: 10px 0;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(41, 65, 77, 0.9);
+    /* background-color: rgba(255, 255, 255, 0.3); */
     /* position: fixed;
     top: 10%;
     z-index: 999; */

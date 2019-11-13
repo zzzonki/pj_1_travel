@@ -5,6 +5,10 @@
     <link rel="shortcut icon" href="favicon.png" type="image/png">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+     <!--Подключение библиотеки иконок  -->
+     <script src="main.js" async></script>
+     <!-- Подключение JavaScript -->    
     <title>Путешествия</title>
 </head>
 <body>
@@ -174,7 +178,7 @@
                 <div class="card__p">Посмотри на мир вниз головой</div>
             </div>
     </section>
-    <section class="form_wrapper">
+    <section class="form_wrapper animated">
         <h3 class="form__h3">Оставьте заявку</h3>
         <form action="post.php" method="POST">
             <label for="name">Ваше имя</label>
@@ -185,6 +189,9 @@
             <input type="tel" name="telephone" placeholder="Ваш номер телефона" required minlength="7" maxlength="12">
             <textarea name="messege" cols="40" rows="5" placeholder="Ваше сообщение"></textarea>
             <button type="submit">Отправить</button>
+            <div class="ck_warning__cross form__cross">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </div>
         </form>
     </section>
     <!-- Блоки в классе конец -->
@@ -230,7 +237,8 @@
         </ul>
     </div>
     </footer>
-    <div class="cookie">
+    <!-- Куки самостоятельно -->
+    <!-- <div class="cookie">
         <div class="cookie__logo"></div>
         <div class="cookie__text">
             <p class="cookie__text_p">Наш сайт использует файлы cookies для получения</p>
@@ -238,6 +246,16 @@
         </div>
         <div class="cookie__button">Я понял</div>
         <div class="cookie__exit">&#9587;</div>
+    </div> -->
+    <!-- Куки в классе -->
+    <div class="ck_warning">
+        <h3 class="ck_warning__h3">
+            Мыиспользуем куки,
+            следим за вами
+        </h3>
+        <div class="ck_warning__cross">
+            <i class="fas fa-times" aria-hidden="true"></i>
+        </div>
     </div>
 </body>
 </html>
