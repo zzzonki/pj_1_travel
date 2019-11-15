@@ -3,7 +3,7 @@
     position: fixed;
     bottom: 0%;
     z-index: 999;
-    height: 150px;
+    height: 130px;
     width: 100%;
     background-color: rgba(41, 65, 77, 0.6);
     display: flex;
@@ -17,10 +17,14 @@
     width: 120px;
     height: 120px;
     margin-left: 5vw;
-    background-image: url(../img/cookie.png);
+    background-image: url(../img/cookie_logo_off.png);
     background-position: center center;
     background-size: contain;
     background-repeat: no-repeat;
+    cursor: pointer;
+}
+.cookie__logo_helper{
+    background-image: url(../img/cookie_logo_on.png);
 }
 .cookie__text{
     width: 600px;
@@ -69,6 +73,18 @@
     background-color: var(--dark-blue);
     cursor: pointer;
     color: var(--underwhite);
+}
+.cookie__screamer{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin: -250px 0 0 -250px;
+    background-image: url(../img/cookie_monster.png);
+    width: 500px;
+    height: 500px;
+    z-index: 100500;
+    display: none;
+    cursor: pointer;
 }
 /* Куки в классе */
 /* .ck_warning{
