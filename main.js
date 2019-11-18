@@ -10,13 +10,21 @@
 // потом панель пропадает
 let cookie = document.querySelector('.cookie')
 let cross = document.querySelectorAll('.cookie__exit')
+let cookie__button = document.querySelector('.cookie__button')
 let promo_form = document.querySelector('.form_wrapper')
 let action__btn = document.querySelector('.action__btm')
 let def_animation = 'fadeOut'
 let card__lines = document.querySelectorAll('.card__line')
+
+/*
+Часть, посвященная работе с FAQ панелями
+*/
 let faq_quest = document.querySelectorAll('.faq_panel__quest')
 let faq_answer = document.querySelectorAll('.faq_panel__answer')
-let cookie__button = document.querySelector('.cookie__button')
+
+/*
+Часть, посвященная карточкам
+*/
 
 for (let i = 0; i < card__lines.length; i++) {
     card__lines[i].onclick = function(){
@@ -25,11 +33,9 @@ for (let i = 0; i < card__lines.length; i++) {
     // alert(i*i)
 }
 
-// let cat = {
-//     color: "grey"
-//     style: "vintage"
-// }
-// console.log(cat.color)
+/*
+Работа с кнопкой закрытия кукис
+*/
 
 cookie__button.onclick = () => {
     cookie.style.display = "none"
@@ -132,3 +138,27 @@ screamer.onclick = function() {
     // this.classList.remove('screamer')
 }
 
+// При входе пользователя окно спрашивает, в какую страну он хочет отправиться.
+// В зависимости от ответа он перерисовывает промо бэкграунд
+// Страница должна полностью загрузиться
+// Данные должны приводиться к нижнему регистру для универсальности
+
+setTimeout(() => {
+    let answer = prompt("Введите страну, в которую хотите отправиться")
+    let answer2 = prompt("Введите еще страну")
+    let promo = document.querySelector(".promo")
+    let footer = document.querySelector("footer")
+    let arr_country = ["финляндия", "эстония", "норвегия", "швеция", "дания", "болгария"]
+    GetInfo(answer, arr_country, promo)
+    GetInfo(answer2, arr_country, footer)
+}, 600);
+    
+function GetInfo(info, arr, el){
+    info = info.toLowerCase()
+    for (let i = 0; i < arr.length; i++) {
+        if (info == arr[i]) {
+            //  происходит смена бэкграунда
+            el.style.backgroundImage = `url(img/${arr[i]}.jpg)`
+        }
+    }
+}
