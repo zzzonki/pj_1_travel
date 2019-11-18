@@ -68,25 +68,29 @@ cross[0].onclick = () => {
 
 // При клике на вопросы открываются ответы
 
-var flag
-flag = true
+var flags = []
+// У нас массив, в котором есть значения true
 
 for (let i = 0; i < faq_quest.length; i++) {
+    flags.push(true)
+    console.log(flags)
     faq_quest[i].onclick = function(){
         faq_answer[i].classList.add('animated')
-        if(flag){
+        if(flags[i]){
             faq_answer[i].classList.remove('flipOutX')
             faq_answer[i].classList.add('flipInX')
             faq_answer[i].classList.toggle('faq__helper')
-            flag = false
+            flags[i] = false
+            console.log(flags[i]);
         }
         else{
             faq_answer[i].classList.remove('flipInX')
             faq_answer[i].classList.add('flipOutX')
-            flag = true
+            flags[i] = true
             setTimeout(() => {
                 faq_answer[i].classList.remove('faq__helper')
             }, 400) 
+            console.log(flags[i]);
         }
 
         // if(faq_answer[i].classList.contains('zoomOut')){
@@ -127,3 +131,4 @@ screamer.onclick = function() {
     }, 600) 
     // this.classList.remove('screamer')
 }
+
