@@ -21,6 +21,7 @@ let card__lines = document.querySelectorAll('.card__line')
 */
 let faq_quest = document.querySelectorAll('.faq_panel__quest')
 let faq_answer = document.querySelectorAll('.faq_panel__answer')
+let faq_arrow = document.querySelectorAll('.faq_arrow')
 
 /*
 Часть, посвященная карточкам
@@ -83,6 +84,8 @@ for (let i = 0; i < faq_quest.length; i++) {
     faq_quest[i].onclick = function(){
         faq_answer[i].classList.add('animated')
         if(flags[i]){
+            faq_arrow[i].classList.remove('rotateArrowBack')
+            faq_arrow[i].classList.add('rotateArrow')
             faq_answer[i].classList.remove('flipOutX')
             faq_answer[i].classList.add('flipInX')
             faq_answer[i].classList.toggle('faq__helper')
@@ -92,21 +95,13 @@ for (let i = 0; i < faq_quest.length; i++) {
         else{
             faq_answer[i].classList.remove('flipInX')
             faq_answer[i].classList.add('flipOutX')
+            faq_arrow[i].classList.add('rotateArrowBack')
             flags[i] = true
             setTimeout(() => {
                 faq_answer[i].classList.remove('faq__helper')
-            }, 400) 
+            }, 400)
             console.log(flags[i]);
         }
-
-        // if(faq_answer[i].classList.contains('zoomOut')){
-        //     faq_answer[i].classList.remove('zoomOut'))
-        //     faq_answer[i].classList.add('zoomIn')
-        // }
-        // if(faq_answer[i].classList.contains('zoomIn')){
-        //     faq_answer[i].classList.remove('zoomIn')
-        //     faq_answer[i].classList.add('zoomOut')
-        // }
     }
 }
 // Печенька на куки-панели меняется на обведенную печеньку и обратно, при нажатии. Пати хард.
@@ -135,7 +130,6 @@ screamer.onclick = function() {
     setTimeout(() => {
         screamer.style.display = 'none'
     }, 600) 
-    // this.classList.remove('screamer')
 }
 
 // При входе пользователя окно спрашивает, в какую страну он хочет отправиться.
@@ -150,7 +144,8 @@ setTimeout(() => {
     let footer = document.querySelector("footer")
     let arr_country = ["финляндия", "эстония", "норвегия", "швеция", "дания", "болгария"]
     GetInfo(answer, arr_country, promo)
-    GetInfo(answer2, arr_country, footer)
+    GetInfo(answer, arr_country, footer)
+
 }, 600);
     
 function GetInfo(info, arr, el){

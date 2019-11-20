@@ -27,3 +27,10 @@
 .faq__helper{
     display: block;
 }
+/* Стрелки для вращения */
+.faq_arrow{
+    display: block;
+}
+.faq_arrow__rt{
+    transform: rotate(180deg);
+}
