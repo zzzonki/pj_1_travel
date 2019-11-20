@@ -139,21 +139,23 @@ screamer.onclick = function() {
 
 setTimeout(() => {
     let answer = prompt("Введите страну, в которую хотите отправиться")
-    let answer2 = prompt("Введите еще страну")
+    // let answer2 = prompt("Введите еще страну")
     let promo = document.querySelector(".promo")
     let footer = document.querySelector("footer")
     let arr_country = ["финляндия", "эстония", "норвегия", "швеция", "дания", "болгария"]
-    GetInfo(answer, arr_country, promo)
-    GetInfo(answer, arr_country, footer)
-
+    let arr_hi = ["Hei", "Tere", "Hei", "Hej", "Hej", "Здрасти"]
+    GetInfo(answer, arr_country, arr_hi, promo, footer)
+    // GetInfo(answer2, arr_country, footer)
 }, 600);
     
-function GetInfo(info, arr, el){
+function GetInfo(info, arr, hi, el, el2){   
     info = info.toLowerCase()
     for (let i = 0; i < arr.length; i++) {
         if (info == arr[i]) {
-            //  происходит смена бэкграунда
+            //  происходит смена бэкграунда промо и футера
             el.style.backgroundImage = `url(img/${arr[i]}.jpg)`
+            el2.style.backgroundImage = `url(img/${arr[i]}.jpg)`
+            alert(`${hi[i]}`)
         }
     }
 }
