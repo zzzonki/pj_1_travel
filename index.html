@@ -7,7 +7,8 @@
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
      <!--Подключение библиотеки иконок  -->
-     <script src="main.js" async></script>
+     <script src="JQ.js" defer></script>
+     <script src="main.js" defer></script>
      <!-- Подключение JavaScript -->    
     <title>Путешествия</title>
 </head>
@@ -180,13 +181,15 @@
     </section>
     <section class="form_wrapper animated">
         <h3 class="form__h3">Оставьте заявку</h3>
+        <span class="error_message">  </span>
         <form action="post.php" method="POST">
             <label for="name">Ваше имя</label>
-            <input type="text" name="name" placeholder="Ваше имя" required minlength="2" maxlength="16">
+            <input type="text" name="name" placeholder="Ваше имя"  minlength="2" maxlength="16">
             <label for="surname">Ваша фамилия</label>
             <input type="text" name="surname" placeholder="Ваша фамилия" minlength="2" maxlength="16">
             <label for="telephone">Ваш номер телефона</label>
-            <input type="tel" name="telephone" placeholder="Ваш номер телефона" required minlength="7" maxlength="12">
+            <input type="tel" name="telephone" placeholder="Ваш номер телефона"  minlength="7" maxlength="12">
+            <label for="telephone">Ваше сообщение</label>
             <textarea name="messege" cols="40" rows="5" placeholder="Ваше сообщение"></textarea>
             <button type="submit">Отправить</button>
             <div class="cookie__exit form__exit">

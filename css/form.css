@@ -77,3 +77,8 @@
 .form_wrapper textarea{
     margin-top: 20px;
 }
+.error_message{
+    color: red;
+    font-style: italic;
+    font-size: 20px;
+}

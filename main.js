@@ -155,7 +155,51 @@ function GetInfo(info, arr, hi, el, el2){
             //  происходит смена бэкграунда промо и футера
             el.style.backgroundImage = `url(img/${arr[i]}.jpg)`
             el2.style.backgroundImage = `url(img/${arr[i]}.jpg)`
-            alert(`${hi[i]}`)
+            alert(hi[i])
         }
+    }
+}
+
+function drawError(text, el){
+    el.innerHTML = text
+}
+// Валидизация формы
+// с расчетом только 1 форма на данной странице
+$('form').submit(function(e){ // submit - событие, e = events
+
+    e.preventDefault()
+    let nameVal = $(this).find("[name = 'name']").val()
+    let fioVal = $(this).find("[name = 'surname']").val()
+    let telVal = $(this).find("[name = 'telephone']").val()
+    let textVal = $(this).find("[name = 'message']").val()
+    let arr_labels = ['name', 'surname', 'telephone', 'message']
+    if(nameVal == '' || fioVal == '' || telVal == '' || textVal == ''){
+        let err = document.querySelector(".error_message")
+        let error_message = "какое-то из полей пустует"
+        drawError(error_message, err)
+        CheckEmpty(nameVal, arr_labels[0])
+        CheckEmpty(fioVal, arr_labels[1])
+        CheckEmpty(telVal, arr_labels[2])
+        CheckEmpty(textVal, arr_labels[3])
+    }
+    else{
+        CheckEmpty(nameVal, arr_labels[0])
+        CheckEmpty(fioVal, arr_labels[1])
+        CheckEmpty(telVal, arr_labels[2])
+        CheckEmpty(textVal, arr_labels[3])
+        let err = document.querySelector(".error_message")
+        err.remove()
+        setInterval(() => {
+            e.stopPropogation()
+        }, 300);
+    }
+})
+
+function CheckEmpty(el, label_name){
+    if(el == ''){
+        $('form').find(`[for = '${label_name}']`).css('color', 'red')
+    }
+    else{
+        $('form').find(`[for = '${label_name}']`).css('color', 'lightblue')
     }
 }
