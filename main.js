@@ -1,11 +1,3 @@
-// let age = prompt("Введите ваш возраст:")
-// if (age>=18){
-//     alert("проходите")
-// }
-// else{
-//     alert("возвращайтесь с родителями")
-// }
-
 // пользователь щелкает по крестику нашей панели, 
 // потом панель пропадает
 let cookie = document.querySelector('.cookie')
@@ -27,11 +19,23 @@ let faq_arrow = document.querySelectorAll('.faq_arrow')
 Часть, посвященная карточкам
 */
 
+let arr_labels = ['name', 'surname', 'telephone', 'message']
+let err = document.querySelector(".error_message")
+let nameVal = $('form').find("[name = 'name']").val()
+let fioVal = $('form').find("[name = 'surname']").val()
+let telVal = $('form').find("[name = 'telephone']").val()
+let textVal = $('form').find("[name = 'message']").val()
+
+/*
+Переменные, перенесенные из функций в начало, 
+для того, чтобы применить их ко всему документу
+и использовать в при отключении формы
+*/
+
 for (let i = 0; i < card__lines.length; i++) {
     card__lines[i].onclick = function(){
         this.classList.toggle('card__line__helper')
     }
-    // alert(i*i)
 }
 
 /*
@@ -47,6 +51,13 @@ cookie__button.onclick = () => {
 // при нажатии на крестик пропадет
 // через 5 секунд на сайте она появляется автоматически
 
+// Открытие формы по кнопке Enter
+document.addEventListener('keydown', function(e) {
+    if (event.code == 'Enter'){
+        action__btn.click();
+    }
+});
+
 action__btn.onclick = () => {
     if (promo_form.classList.contains(def_animation)) {
         promo_form.classList.remove(def_animation)
@@ -55,12 +66,19 @@ action__btn.onclick = () => {
     // alert("по мне кликнули")
 }
 
+// var err = document.querySelector(".error_message")
+// На эту переменную ссылается также функция drawError
+
 cross[0].onclick = () => {
+    err.innerHTML = ""
+    for (let i = 0; i < arr_labels.length; i++) {
+        $('form').find(`[for = '${arr_labels[i]}']`).css('color', 'white')        
+    }
     promo_form.classList.add(def_animation)
     setTimeout(() => {
         promo_form.style.display = "none"
     }, 600)
-    // ck_warning.remove()
+    // error_message.remove()
 }
 // Есть красные линии на карточках
 // При наведении они становятся шире
@@ -78,32 +96,32 @@ cross[0].onclick = () => {
 var flags = []
 // У нас массив, в котором есть значения true
 
-for (let i = 0; i < faq_quest.length; i++) {
-    flags.push(true)
-    console.log(flags)
-    faq_quest[i].onclick = function(){
-        faq_answer[i].classList.add('animated')
-        if(flags[i]){
-            faq_arrow[i].classList.remove('rotateArrowBack')
-            faq_arrow[i].classList.add('rotateArrow')
-            faq_answer[i].classList.remove('flipOutX')
-            faq_answer[i].classList.add('flipInX')
-            faq_answer[i].classList.toggle('faq__helper')
-            flags[i] = false
-            console.log(flags[i]);
-        }
-        else{
-            faq_answer[i].classList.remove('flipInX')
-            faq_answer[i].classList.add('flipOutX')
-            faq_arrow[i].classList.add('rotateArrowBack')
-            flags[i] = true
-            setTimeout(() => {
-                faq_answer[i].classList.remove('faq__helper')
-            }, 400)
-            console.log(flags[i]);
-        }
-    }
-}
+            for (let i = 0; i < faq_quest.length; i++) {
+                flags.push(true)
+                console.log(flags)
+                faq_quest[i].onclick = function(){
+                    faq_answer[i].classList.add('animated')
+                    if(flags[i]){
+                        faq_arrow[i].classList.remove('rotateArrowBack')
+                        faq_arrow[i].classList.add('rotateArrow')
+                        faq_answer[i].classList.remove('flipOutX')
+                        faq_answer[i].classList.add('flipInX')
+                        faq_answer[i].classList.toggle('faq__helper')
+                        flags[i] = false
+                        console.log(flags[i]);
+                    }
+                    else{
+                        faq_answer[i].classList.remove('flipInX')
+                        faq_answer[i].classList.add('flipOutX')
+                        faq_arrow[i].classList.add('rotateArrowBack')
+                        flags[i] = true
+                        setTimeout(() => {
+                            faq_answer[i].classList.remove('faq__helper')
+                        }, 400)
+                        console.log(flags[i]);
+                    }
+                }
+            }
 // Печенька на куки-панели меняется на обведенную печеньку и обратно, при нажатии. Пати хард.
 
 let cookie_logo = document.querySelector('.cookie__logo')
@@ -165,16 +183,19 @@ function drawError(text, el){
 }
 // Валидизация формы
 // с расчетом только 1 форма на данной странице
+document.addEventListener('keydown', function(event) {
+    if (event.code == 'Enter'){
+
 $('form').submit(function(e){ // submit - событие, e = events
 
     e.preventDefault()
-    let nameVal = $(this).find("[name = 'name']").val()
-    let fioVal = $(this).find("[name = 'surname']").val()
-    let telVal = $(this).find("[name = 'telephone']").val()
-    let textVal = $(this).find("[name = 'message']").val()
-    let arr_labels = ['name', 'surname', 'telephone', 'message']
+    // let nameVal = $(this).find("[name = 'name']").val()
+    // let fioVal = $(this).find("[name = 'surname']").val()
+    // let telVal = $(this).find("[name = 'telephone']").val()
+    // let textVal = $(this).find("[name = 'message']").val()
+    // let arr_labels = ['name', 'surname', 'telephone', 'message']
     if(nameVal == '' || fioVal == '' || telVal == '' || textVal == ''){
-        let err = document.querySelector(".error_message")
+        // let err = document.querySelector(".error_message")
         let error_message = "какое-то из полей пустует"
         drawError(error_message, err)
         CheckEmpty(nameVal, arr_labels[0])
@@ -192,6 +213,8 @@ $('form').submit(function(e){ // submit - событие, e = events
         setInterval(() => {
             e.stopPropogation()
         }, 300);
+    }
+})
     }
 })
 

@@ -75,7 +75,7 @@
     box-shadow: 2px 3px 3px var(--grey);
 }
 .form_wrapper textarea{
-    margin-top: 20px;
+    /* margin-top: 10px; */
 }
 .error_message{
     color: red;
