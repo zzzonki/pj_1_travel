@@ -19,12 +19,14 @@ let faq_arrow = document.querySelectorAll('.faq_arrow')
 Часть, посвященная карточкам
 */
 
-let arr_labels = ['name', 'surname', 'telephone', 'message']
+let arr_labels = ['name', 'surname', 'telephone', 'message'] // массив лейблов
 let err = document.querySelector(".error_message")
-let nameVal = $('form').find("[name = 'name']").val()
-let fioVal = $('form').find("[name = 'surname']").val()
-let telVal = $('form').find("[name = 'telephone']").val()
-let textVal = $('form').find("[name = 'message']").val()
+let form = document.querySelector("form")
+let nameVal = form.querySelector("[name = 'name']").value;
+let fioVal = form.querySelector("[name = 'surname']").value;
+let telVal = form.querySelector("[name = 'telephone']").value;
+let textVal = form.querySelector("[name = 'message']").value;    
+let elem_form = [nameVal, fioVal, telVal, textVal] // массив инпутов
 
 /*
 Переменные, перенесенные из функций в начало, 
@@ -52,11 +54,12 @@ cookie__button.onclick = () => {
 // через 5 секунд на сайте она появляется автоматически
 
 // Открытие формы по кнопке Enter
-document.addEventListener('keydown', function(e) {
-    if (event.code == 'Enter'){
-        action__btn.click();
-    }
-});
+
+// document.addEventListener('keydown', function(e) {
+//     if (event.code == 'Enter'){
+//         action__btn.click();
+//     }
+// });
 
 action__btn.onclick = () => {
     if (promo_form.classList.contains(def_animation)) {
@@ -181,14 +184,36 @@ function GetInfo(info, arr, hi, el, el2){
 function drawError(text, el){
     el.innerHTML = text
 }
+
+document.addEventListener("keypress", (event) => {
+    let nvg =  document.querySelectorAll(".nav a")
+    for (let i = 0; i < nvg.length; i++) {
+        if(event.code == "Digit1"){
+            nvg[i].style.color = "var(--dark-blue)"
+        }
+        else if(event.code == "Digit2"){
+            nvg[i].style.color = "white"
+        }
+    }
+})
+
 // Валидизация формы
 // с расчетом только 1 форма на данной странице
-document.addEventListener('keydown', function(event) {
-    if (event.code == 'Enter'){
+    // document.addEventListener('keypress', function(event) {
+    //     if (event.code == 'Enter'){
 
-$('form').submit(function(e){ // submit - событие, e = events
+form.document.addEventListener("keypress", (e)=> {
+    if(e.key == "Enter" && promo_form.style.display === 'flex'){
+        validate() // дать ему контекст и все заработает
+        // методы bind и call
+    }
+})
 
-    e.preventDefault()
+document.querySelector('form').addEventListener("submit", validate)
+
+function validate(e){ // onsubmit - событие, e = events
+
+    e.preventDefault() // останавливает отправку формы
     // let nameVal = $(this).find("[name = 'name']").val()
     // let fioVal = $(this).find("[name = 'surname']").val()
     // let telVal = $(this).find("[name = 'telephone']").val()
@@ -198,25 +223,67 @@ $('form').submit(function(e){ // submit - событие, e = events
         // let err = document.querySelector(".error_message")
         let error_message = "какое-то из полей пустует"
         drawError(error_message, err)
-        CheckEmpty(nameVal, arr_labels[0])
-        CheckEmpty(fioVal, arr_labels[1])
-        CheckEmpty(telVal, arr_labels[2])
-        CheckEmpty(textVal, arr_labels[3])
+        for (let i = 0; i < elem_form.length; i++) {
+            CheckEmpty(elem_form[i], arr_labels[i])
+        }
     }
     else{
-        CheckEmpty(nameVal, arr_labels[0])
-        CheckEmpty(fioVal, arr_labels[1])
-        CheckEmpty(telVal, arr_labels[2])
-        CheckEmpty(textVal, arr_labels[3])
+        for (let i = 0; i < elem_form.length; i++) {
+            CheckEmpty(elem_form[i], arr_labels[i])
+        }
         let err = document.querySelector(".error_message")
         err.remove()
         setInterval(() => {
-            e.stopPropogation()
+            e.stopPropogation() // отмена всплывающего события
         }, 300);
     }
+}
+//     }
+// }
+
+// document.onclick = () =>{
+//     alert("по мне нажали")
+// }
+
+// let listen = function (event) {
+//     alert(this)
+// }
+
+// Универсальная функция, которая по клику на объект, 
+// красит весь его текст в синий цвет
+
+function draw(){
+    console.log(this)
+    this.style.color = "blue"
+    this.innerHTML = "*****"
+}
+let header = document.querySelector("header")
+let a_arr = header.querySelectorAll("a")
+// for (let i = 0; i < a_arr.length; i++) {
+//     a_arr[i].addEventListener("mouseover", draw, false)
+// }
+a_arr.forEach(el => {
+    el.addEventListener("mouseover", draw, true)
 })
-    }
-})
+
+
+// document.onclick = listen
+// document.addEventListener("click", draw, false)
+// document.querySelector("header").addEventListener("click", draw, false)
+
+// setTimeout(() => {
+//     document.removeEventListener("click", listen, false)
+// }, 3000)
+
+// document.addEventListener("keypress", (e)=> {
+//     if(e.key == "j" || e.key == "о"){
+//         alert("jello")
+//     }
+//     else{
+//         alert(e.key)
+//     }
+// }, false)
+
 
 function CheckEmpty(el, label_name){
     if(el == ''){
