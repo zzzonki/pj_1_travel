@@ -65,9 +65,10 @@
 }
 /* модифициорванный крестик для формы захвата */
 .form__exit{
-    position: absolute;
-    right: 35%;
-    top: 20%;
+    position: fixed;
+    left: 50%;
+    top: 19%;
+    margin-left: 160px;
 }
 .cookie__exit:hover{
     background-color: var(--dark-blue);

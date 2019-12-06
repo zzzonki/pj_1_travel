@@ -14,7 +14,7 @@
     0%{
         opacity: 0;
     }
-    100{
+    100%{
         opacity: 1;
     }
 }
@@ -109,8 +109,9 @@
     }
 }
 .footer-anim{
-    max-width: 1200px;
-    margin: 0 auto;
+    width: calc(100%/3);
+    height: 150px;
+    /* margin: 0 auto; */
     display: flex;
     justify-content: space-between;
     align-items: center;

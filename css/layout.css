@@ -118,7 +118,6 @@ margin-bottom: var(--sfs);
 .info__ul li:nth-child(4):before{
     content: "\26F1";
 }
-}
 .info__ul:after{
     content: '';
     background-image: url(../img/beach.png);
@@ -127,7 +126,6 @@ margin-bottom: var(--sfs);
     background-repeat: no-repeat;
     width: 290px;
     height: 290px;
-}
 }
 .info__center{
     display: flex;
@@ -140,3 +138,36 @@ margin-bottom: var(--sfs);
     width: 1200px;
     margin: 0 auto;
 }
+.calc{
+    background-color: var(--light-blue);
+    padding: 30px 0;
+    width: 1200px;
+    margin: 0 auto;
+    border-bottom: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.calc__input{
+    width: 300px;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.calc__btn{
+    width: 300px;
+    border:0;
+    outline:none;
+    border-radius:15px;
+    padding:15px 0;
+    font-size:1.5rem;
+    font-weight: bold;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+    background: var(--grey);
+    color: white;
+    transition: all.5s ease;
+    -webkit-appearance: none;
+}
+  .calc__btn:hover {
+    background: var(--dark-blue);
+  }

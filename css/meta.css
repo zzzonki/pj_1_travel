@@ -19,3 +19,6 @@ html{
     --sans-serif: 'Roboto', sans-serif;
     --sfs: 24px;
 }
+.text-color-white{
+    color: var(--underwhite)
+}

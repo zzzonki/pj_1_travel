@@ -7,6 +7,7 @@ let promo_form = document.querySelector('.form_wrapper')
 let action__btn = document.querySelector('.action__btm')
 let def_animation = 'fadeOut'
 let card__lines = document.querySelectorAll('.card__line')
+let form_exit = document.querySelector('.form__exit')
 
 /*
 Часть, посвященная работе с FAQ панелями
@@ -81,6 +82,7 @@ cross[0].onclick = () => {
     setTimeout(() => {
         promo_form.style.display = "none"
     }, 600)
+    form_exit.style.top = "19%"
     // error_message.remove()
 }
 // Есть красные линии на карточках
@@ -202,12 +204,12 @@ document.addEventListener("keypress", (event) => {
     // document.addEventListener('keypress', function(event) {
     //     if (event.code == 'Enter'){
 
-form.document.addEventListener("keypress", (e)=> {
-    if(e.key == "Enter" && promo_form.style.display === 'flex'){
-        validate() // дать ему контекст и все заработает
-        // методы bind и call
-    }
-})
+// form.document.addEventListener("keypress", (e)=> {
+//     if(e.key == "Enter" && promo_form.style.display === 'flex'){
+//         validate() // дать ему контекст и все заработает
+//         // методы bind и call
+//     }
+// })
 
 document.querySelector('form').addEventListener("submit", validate)
 
@@ -226,6 +228,7 @@ function validate(e){ // onsubmit - событие, e = events
         for (let i = 0; i < elem_form.length; i++) {
             CheckEmpty(elem_form[i], arr_labels[i])
         }
+        form_exit.style.top = "23%"
     }
     else{
         for (let i = 0; i < elem_form.length; i++) {
@@ -293,3 +296,15 @@ function CheckEmpty(el, label_name){
         $('form').find(`[for = '${label_name}']`).css('color', 'lightblue')
     }
 }
+
+// Самый простой калькулятор
+
+let calc__input = document.querySelector(".calc__input")
+let calc__btn = document.querySelector(".calc__btn")
+let result = document.createElement("span")
+result.classList.add("text-color-white")
+calc__btn.addEventListener("click", function (){
+    let calc__result = eval(calc__input.value)
+    result.innerHTML = calc__result
+    calc__btn.insertAdjacentElement("afterend", result)
+})

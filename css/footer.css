@@ -4,6 +4,7 @@ footer{
     margin: 0 auto;
     width: 1200px;
     display: flex;
+    justify-content: space-between;
     padding: 30px 20px 10px 20px;
     font-family: var(--sans-serif);
 }
@@ -33,6 +34,7 @@ footer{
     background-size: contain;
     background-repeat: no-repeat;
 }
+
 .footer__ul{
     width: calc(100%/3);
     display: flex;
