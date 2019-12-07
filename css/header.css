@@ -4,7 +4,8 @@
     top: 0px;
     z-index: 999; */    
     background-color: var(--grey);
-    height: 70px;
+    /* height: 70px; */
+    height: 10vh;
     display: flex;
     align-items: center;
     }
