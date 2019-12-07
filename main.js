@@ -82,7 +82,7 @@ cross[0].onclick = () => {
     setTimeout(() => {
         promo_form.style.display = "none"
     }, 600)
-    form_exit.style.top = "19%"
+    // form_exit.style.top = "19%"
     // error_message.remove()
 }
 // Есть красные линии на карточках
@@ -228,7 +228,7 @@ function validate(e){ // onsubmit - событие, e = events
         for (let i = 0; i < elem_form.length; i++) {
             CheckEmpty(elem_form[i], arr_labels[i])
         }
-        form_exit.style.top = "23%"
+        // form_exit.style.top = "23%"
     }
     else{
         for (let i = 0; i < elem_form.length; i++) {

@@ -10,8 +10,8 @@
     align-items: center;
     }
     .logo{
-    width: 45px;
-    height: 45px;
+    width: 8vh;
+    height: 8vh;
     background-image: url('../img/logo2.png'); 
     background-size: contain;
     background-repeat: no-repeat;
