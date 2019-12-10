@@ -308,3 +308,13 @@ calc__btn.addEventListener("click", function (){
     result.innerHTML = calc__result
     calc__btn.insertAdjacentElement("afterend", result)
 })
+
+$(document).ready(function(){
+    $('.one-time').slick({
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        adaptiveHeight: true
+      });
+  });

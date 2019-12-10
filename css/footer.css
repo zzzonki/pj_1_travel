@@ -7,6 +7,7 @@ footer{
     justify-content: space-between;
     padding: 30px 20px 10px 20px;
     font-family: var(--sans-serif);
+    color: var(--underwhite);
 }
 .footer_wrap{
     width: calc(100%/3);
@@ -19,7 +20,7 @@ footer{
     font-family: var(--serif);
 }
 .contacts__orange{
-    color: var(--underwhite);
+    color: white;
     margin-bottom: 5px;
 }
 .contacts__p{
