@@ -309,12 +309,28 @@ calc__btn.addEventListener("click", function (){
     calc__btn.insertAdjacentElement("afterend", result)
 })
 
-$(document).ready(function(){
-    $('.one-time').slick({
+// $(document).ready(function(){
+//     $('.slider').slick({
+//         autoplay: true,
+//         autoplaySpeed: 4000,
+//         dots: true,
+//         infinite: true,
+//         speed: 900,
+//         slidesToShow: 1,
+//         // adaptiveHeight: true
+//         // adaptiveWidth: true
+//       });
+//   });
+
+$(document).ready(function(){  
+    $('.slider').slick({
         dots: true,
         infinite: true,
-        speed: 300,
-        slidesToShow: 1,
-        adaptiveHeight: true
-      });
-  });
+        speed: 500,
+        fade: true,
+        cssEase: 'linear',
+        arrows: true,
+        autoplay: true,
+        centerMode: true
+    });
+});

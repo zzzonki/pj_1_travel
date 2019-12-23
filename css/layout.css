@@ -168,7 +168,54 @@ margin-bottom: var(--sfs);
     transition: all.5s ease;
     -webkit-appearance: none;
 }
-  .calc__btn:hover {
+.calc__btn:hover {
     background: var(--dark-blue);
-  }
+}
   
+.slider{
+    width: auto;
+    height: initial;
+    display: block;
+    justify-content: center;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+.slick-prev{
+    color: black !important;
+}
+.slick-next{
+    color: black !important;
+}
+.slider_item{
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    height: 70vh !important;
+}
+.slider_item_0{
+    display: flex;
+    background-image: url('../img/party.jpg');
+}
+.slider_item_1{
+    background-image: url('../img/room.jpg');
+}
+.slider_item_1 p{
+    color: black !important;
+}
+.slider_item_2{
+    background-image: url('../img/plane.jpg');
+}
+.slider_item_3{
+    background-image: url('../img/beachsand.jpg');
+}
+.slider_item_3 p{
+    color: black !important;
+}
+.slider_item p{
+    color: var(--underwhite);
+    font-size: calc(var(--sfs)*2);
+    text-align: center;
+}
