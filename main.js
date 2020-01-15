@@ -160,16 +160,16 @@ screamer.onclick = function() {
 // Страница должна полностью загрузиться
 // Данные должны приводиться к нижнему регистру для универсальности
 
-setTimeout(() => {
-    let answer = prompt("Введите страну, в которую хотите отправиться")
-    // let answer2 = prompt("Введите еще страну")
-    let promo = document.querySelector(".promo")
-    let footer = document.querySelector("footer")
-    let arr_country = ["финляндия", "эстония", "норвегия", "швеция", "дания", "болгария"]
-    let arr_hi = ["Hei", "Tere", "Hei", "Hej", "Hej", "Здрасти"]
-    GetInfo(answer, arr_country, arr_hi, promo, footer)
-    // GetInfo(answer2, arr_country, footer)
-}, 600);
+// setTimeout(() => {
+//     let answer = prompt("Введите страну, в которую хотите отправиться")
+//     // let answer2 = prompt("Введите еще страну")
+//     let promo = document.querySelector(".promo")
+//     let footer = document.querySelector("footer")
+//     let arr_country = ["финляндия", "эстония", "норвегия", "швеция", "дания", "болгария"]
+//     let arr_hi = ["Hei", "Tere", "Hei", "Hej", "Hej", "Здрасти"]
+//     GetInfo(answer, arr_country, arr_hi, promo, footer)
+//     // GetInfo(answer2, arr_country, footer)
+// }, 600);
     
 function GetInfo(info, arr, hi, el, el2){   
     info = info.toLowerCase()
