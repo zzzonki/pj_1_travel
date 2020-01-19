@@ -2,10 +2,13 @@
 echo "
     <header class='header'>
         <div class='logo'></div>
-        <nav class='nav'>
-            <a href='#info'>Главная</a>
-            <a href='#ao'>О нас</a>
-            <a href='#contacts'>Контакты</a>
+        <nav class='nav'>";
+
+        for ($i=0; $i < count($anchor["Path"]); $i++) { 
+            ECHO "<a style='color:{$anchor['Color'][$i]}' href='{$anchor['Path'][$i]}'>{$anchor['Content'][$i]}</a>";
+        }
+
+echo "
         </nav>
     </header>
 "
