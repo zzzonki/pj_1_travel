@@ -73,7 +73,6 @@
     require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/includes/faq.inc.php";
     require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/includes/footer.inc.php";
     ?>
-    
     <!-- Куки самостоятельно -->
     <div class="cookie">
         <div class="cookie__logo"></div>

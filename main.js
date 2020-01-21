@@ -265,9 +265,9 @@ let a_arr = header.querySelectorAll("a")
 // for (let i = 0; i < a_arr.length; i++) {
 //     a_arr[i].addEventListener("mouseover", draw, false)
 // }
-a_arr.forEach(el => {
-    el.addEventListener("mouseover", draw, true)
-})
+// a_arr.forEach(el => {
+//     el.addEventListener("mouseover", draw, true)
+// })
 
 
 // document.onclick = listen
@@ -296,18 +296,6 @@ function CheckEmpty(el, label_name){
         $('form').find(`[for = '${label_name}']`).css('color', 'lightblue')
     }
 }
-
-// Самый простой калькулятор
-
-let calc__input = document.querySelector(".calc__input")
-let calc__btn = document.querySelector(".calc__btn")
-let result = document.createElement("span")
-result.classList.add("text-color-white")
-calc__btn.addEventListener("click", function (){
-    let calc__result = eval(calc__input.value)
-    result.innerHTML = calc__result
-    calc__btn.insertAdjacentElement("afterend", result)
-})
 
 // $(document).ready(function(){
 //     $('.slider').slick({

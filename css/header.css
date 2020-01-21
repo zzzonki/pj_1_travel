@@ -18,7 +18,8 @@
     margin-left: var(--sfs)
     }
     .nav{
-    width: calc(var(--sfs)*16);
+    /* width: calc(var(--sfs)*16); */
+    width: 500px;
     display: flex;
     justify-content: space-around;
     }
