@@ -8,8 +8,10 @@ echo "
 $key = implode(",", $keywords);
 echo $key;
 echo "
+    >
+    <base href='{$_SERVER['HTTP_HOST']}'>
     <link rel='shortcut icon' href='favicon.png' type='image/png'>
-    <link rel='stylesheet' href='css/style.css'>
+    <link rel='stylesheet' href='/pj_1_travel/css/style.css'>
     <link href='https://fonts.googleapis.com/css?family=Playfair+Display|Roboto&display=swap' rel='stylesheet'>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css'>
     <!--Подключение библиотеки иконок  -->

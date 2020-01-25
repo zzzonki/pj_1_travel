@@ -8,25 +8,42 @@ if($result = $connect->query("SELECT * FROM keywords")){
     }
     $result->close();
 };
-// $keywords = ['Путешествия', 'Путевки_в_Турцию', 'Мальдивы', 'Финляндия', 'Корфу', 'Швеция'];
 
 if($result = $connect->query("SELECT * FROM anchors")){
-    $anchors_db = ["Color"=> [], "Path"=> [], "Content"=> [], "Order"=> []];
+    $anchor = ["Color"=> [], "Path"=> [], "Content"=> [], "Order"=> []];
     while($row = $result->fetch_assoc()){
-        array_push($anchors_db["Color"], $row["color"]);
-        array_push($anchors_db["Path"], $row["path"]);
-        array_push($anchors_db["Content"], $row["content"]);
-        array_push($anchors_db["Order"], $row["ordera"]);
+        array_push($anchor["Color"], $row["color"]);
+        array_push($anchor["Path"], $row["path"]);
+        array_push($anchor["Content"], $row["content"]);
+        array_push($anchor["Order"], $row["ordera"]);
     }
     $result->close();
 }
-$anchor = $anchors_db;
 
-$info = ['Представьте себе все лучшее, что есть в России: широкие просторы, разнообразная природа, щедрая душа, девушки особой красоты, баня в конце концов. Добавьте к этому все то, чем так привлекательна Москва: гастрономические рестораны, безудержные вечеринки, звезды ТВ и инстаграмма вокруг. Взболтайте, но не смешивайте и получите Розу Хутор 2017 – правильный баланс здорового лайфстайла и роскоши.', 'Красная поляна также радует своей доступностью: перелет занимает 2,5 часа, иметь визу необходимости нет, заказать такси можно через привычное приложение за 1400 руб., а время в пути от аэропорта до отеля составляет менее часа! Ну, где еще такое есть? При этом местная инфраструктура не просто ничуть не уступает Альпам, но и даже предвосхищает ожидания: здесь вкуснее, уютнее и веселее. Я уже не говорю об удивительном контрасте температур – наверху зима, а внизу лето!', 'Более того, несмотря на весну за окном, успеть все это оценить лично совсем не поздно – рекордное количество снега обещает продлить сезон на весь апрель, а курорт тем временем предлагает на этот период очень привлекательные цены!', 'В общем, какое бы время вы ни выбрали, Роза Хутор удивит и подарит желание говорить о России с восторгом!'];
+if($result = $connect->query("SELECT * FROM info ORDER BY ordera")){
+    $info = [];
+    while($row = $result->fetch_assoc()){
+        array_push($info, $row["content"]);
+    }
+    $result->close();
+};
 
-$headers = ["Путешествуй красиво! Блог в фотографиях", "Причины воспользоваться нашими турами"];
+if($result = $connect->query("SELECT * FROM headers")){
+    $headers = [];
+    while($row = $result->fetch_assoc()){
+        array_push($headers, $row["content"]);
+    }
+    $result->close();
+};
 
-$li_info = ["Задорные аниматоры", "Просторные номера", "Комфортные самолеты", "Мягкий песок на пляже"];
+if($result = $connect->query("SELECT * FROM li_info ORDER BY ordera")){
+    $li_info = [];
+    while($row = $result->fetch_assoc()){
+        array_push($li_info, $row["content"]);
+    }
+    $result->close();
+};
+// $li_info = ["Задорные аниматоры", "Просторные номера", "Комфортные самолеты", "Мягкий песок на пляже"];
 
 if($result = $connect->query("SELECT * FROM cards ORDER BY ordera")){
     $cards = ["Img"=> [], "Header"=> [], "Parag"=> [], "Order"=> []];
@@ -39,8 +56,20 @@ if($result = $connect->query("SELECT * FROM cards ORDER BY ordera")){
     $result->close();
 };
 
-$faq = ["Quest"=>["Сколько за тур?", "Сколько стоит виза?", "Можно ли полетать на воздушном шаре?"],
-"Answer"=>["Недорого. В дороге накормим.", "Зачем виза, мы так провезем.", "Можно, но недолго."]
-];
 
-$places = ["Путешествия по Украине", "Путешествия по Китаю", "Путешествия по Финляндии", "Путешествия по Норвегии", "Путешествия по Швеции"];
+if($result = $connect->query("SELECT * FROM faq ORDER BY ordera")){
+    $faq = ["Quest"=>[],"Answer"=>[]];
+    while($row = $result->fetch_assoc()){
+        array_push($faq["Quest"], $row["quest"]);
+        array_push($faq["Answer"], $row["answer"]);
+    }
+    $result->close();
+};
+
+if($result = $connect->query("SELECT * FROM places ORDER BY ordera")){
+    $places = [];
+    while($row = $result->fetch_assoc()){
+        array_push($places, $row["content"]);
+    }
+    $result->close();
+};

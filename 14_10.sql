@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Янв 21 2020 г., 01:53
+-- Время создания: Янв 26 2020 г., 00:06
 -- Версия сервера: 10.4.11-MariaDB
 -- Версия PHP: 7.4.1
 
@@ -44,7 +44,7 @@ INSERT INTO `anchors` (`id`, `color`, `path`, `content`, `ordera`) VALUES
 (1, 'white', '#main', 'Главная', 5),
 (2, 'red', '#ao', 'О нас', 10),
 (3, 'green', '#contacts', 'Контакты', 15),
-(4, 'blue', 'admin.php', 'Админка', 20);
+(4, 'blue', 'admin/admin.html', 'Админка', 20);
 
 -- --------------------------------------------------------
 
@@ -75,6 +75,69 @@ INSERT INTO `cards` (`id`, `img`, `header`, `parag`, `ordera`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `faq`
+--
+
+CREATE TABLE `faq` (
+  `id` int(11) NOT NULL,
+  `quest` varchar(100) NOT NULL,
+  `answer` varchar(250) NOT NULL,
+  `ordera` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `faq`
+--
+
+INSERT INTO `faq` (`id`, `quest`, `answer`, `ordera`) VALUES
+(1, 'Сколько за тур?', 'Недорого. В дороге накормим.', 5),
+(2, 'Сколько стоит виза?', 'Зачем виза, мы так провезем.', 10),
+(3, 'Можно ли полетать на воздушном шаре?', 'Можно, но недолго.', 15);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `headers`
+--
+
+CREATE TABLE `headers` (
+  `id` int(11) NOT NULL,
+  `content` varchar(60) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `headers`
+--
+
+INSERT INTO `headers` (`id`, `content`) VALUES
+(1, 'Путешествуй красиво! Блог в фотографиях'),
+(2, 'Причины воспользоваться нашими турами');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `info`
+--
+
+CREATE TABLE `info` (
+  `id` int(11) NOT NULL,
+  `content` varchar(600) NOT NULL,
+  `ordera` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `info`
+--
+
+INSERT INTO `info` (`id`, `content`, `ordera`) VALUES
+(1, 'Для современного мира социально-экономическое развитие требует анализа укрепления демократической системы. Задача организации, в особенности же курс на социально-ориентированный национальный проект обеспечивает широкому кругу специалистов поэтапного и последовательного развития общества. Повседневная практика показывает, что рамки и место обучения кадров проверки влечёт за собой интересный процесс внедрения модернизации соответствующих условий активизации.', 5),
+(2, 'Повседневная практика показывает, что выбранный нами инновационный путь проверки влечёт за собой интересный процесс внедрения модернизации укрепления демократической системы. Повседневная практика показывает, что социально-экономическое развитие играет важную роль в формировании системы обучения кадров, соответствующей насущным потребностям. Равным образом постоянный количественный рост и сфера нашей активности требует определения и уточнения модели развития.', 10),
+(3, 'Разнообразный и богатый опыт управление и развитие структуры обеспечивает широкому кругу специалистов модели развития. Разнообразный и богатый опыт высокотехнологичная концепция общественной системы позволяет оценить значение представляет собой интересный эксперимент систему массового участия. Равным образом сложившаяся структура организации способствует подготовке и реализации соответствующих условий активизации.', 15),
+(4, 'Повседневная практика показывает, что начало повседневной работы по формированию позиции обеспечивает актуальность поэтапного и последовательного развития общества.', 20);
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `keywords`
 --
 
@@ -88,12 +151,57 @@ CREATE TABLE `keywords` (
 --
 
 INSERT INTO `keywords` (`id`, `keyword`) VALUES
-(1, 'Путешествия'),
+(1, '\'Путешествия'),
 (2, 'Путевки_в_Турцию'),
 (3, 'Мальдивы'),
 (4, 'Финляндия'),
 (5, 'Корфу'),
-(6, 'Швеция');
+(6, 'Швеция\'');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `li_info`
+--
+
+CREATE TABLE `li_info` (
+  `id` int(11) NOT NULL,
+  `content` varchar(30) NOT NULL,
+  `ordera` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `li_info`
+--
+
+INSERT INTO `li_info` (`id`, `content`, `ordera`) VALUES
+(1, 'Задорные аниматоры', 5),
+(2, 'Просторные номера', 10),
+(3, 'Комфортные самолеты', 15),
+(4, 'Мягкий песок на пляже', 20);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `places`
+--
+
+CREATE TABLE `places` (
+  `id` int(11) NOT NULL,
+  `content` varchar(50) NOT NULL,
+  `ordera` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `places`
+--
+
+INSERT INTO `places` (`id`, `content`, `ordera`) VALUES
+(1, 'Путешествия по Украине', 5),
+(2, 'Путешествия по Китаю', 10),
+(3, 'Путешествия по Финляндии', 15),
+(4, 'Путешествия по Норвегии', 20),
+(5, 'Путешествия по Швеции', 25);
 
 --
 -- Индексы сохранённых таблиц
@@ -112,9 +220,39 @@ ALTER TABLE `cards`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `faq`
+--
+ALTER TABLE `faq`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `headers`
+--
+ALTER TABLE `headers`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `info`
+--
+ALTER TABLE `info`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `keywords`
 --
 ALTER TABLE `keywords`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `li_info`
+--
+ALTER TABLE `li_info`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `places`
+--
+ALTER TABLE `places`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -134,10 +272,40 @@ ALTER TABLE `cards`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT для таблицы `faq`
+--
+ALTER TABLE `faq`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT для таблицы `headers`
+--
+ALTER TABLE `headers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT для таблицы `info`
+--
+ALTER TABLE `info`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT для таблицы `keywords`
 --
 ALTER TABLE `keywords`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT для таблицы `li_info`
+--
+ALTER TABLE `li_info`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT для таблицы `places`
+--
+ALTER TABLE `places`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

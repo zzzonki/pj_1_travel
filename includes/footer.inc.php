@@ -15,7 +15,6 @@ ECHO "
             <a href='https://instagram.com' target='blank'><div class='soc_icons soc_icons_inst'></div></a>
         </div>
     </div>
-    </div>
     <div class='footer__logo'>
     </div>
     <ul class='footer__ul'>
@@ -27,6 +26,5 @@ for ($i=0; $i < count($places); $i++) {
 }
 ECHO "
     </ul>
-    </div>
     </footer>
 ";

@@ -3,7 +3,7 @@ footer{
     background: var(--grey);
     margin: 0 auto;
     width: 1200px;
-    display: flex;
+    display: flex !important;
     justify-content: space-between;
     padding: 30px 20px 10px 20px;
     font-family: var(--sans-serif);
