@@ -3,6 +3,7 @@
      position: sticky;
     top: 0px;
     z-index: 999; */    
+    position: relative; 
     background-color: var(--grey);
     /* height: 70px; */
     height: 10vh;
