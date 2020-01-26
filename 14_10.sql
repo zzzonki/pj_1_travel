@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Янв 26 2020 г., 00:06
+-- Время создания: Янв 26 2020 г., 15:35
 -- Версия сервера: 10.4.11-MariaDB
 -- Версия PHP: 7.4.1
 
@@ -41,9 +41,9 @@ CREATE TABLE `anchors` (
 --
 
 INSERT INTO `anchors` (`id`, `color`, `path`, `content`, `ordera`) VALUES
-(1, 'white', '#main', 'Главная', 5),
-(2, 'red', '#ao', 'О нас', 10),
-(3, 'green', '#contacts', 'Контакты', 15),
+(1, 'white', 'http://localhost/pj_1_travel/index.php', 'Главная', 5),
+(2, 'red', 'http://localhost/pj_1_travel/index.php#ao', 'О нас', 10),
+(3, 'green', 'http://localhost/pj_1_travel/index.php#contacts', 'Контакты', 15),
 (4, 'blue', 'admin/admin.html', 'Админка', 20);
 
 -- --------------------------------------------------------
