@@ -33,7 +33,7 @@
         /* При установке подчеркивания при наведении, вместо смены цвета transition не работает. Может он не распространяется на text-decoration? */
     }
     .nav a:hover{
-        color: var(--dark-blue);
+        color: var(--dark-blue) !important;
     }
     .side_nav{
         position: fixed;
