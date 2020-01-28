@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="ru">
-<?php
-    $title = "Админка";
-    require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/includes/head.inc.php";
-?>
-<body>
     <?php
+    require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/admin/admin.head.php";
     require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/includes/header.inc.php";
     ?>
     <section class="has-background-link columns">
