@@ -94,5 +94,6 @@
             <i class="fas fa-times" aria-hidden="true"></i>
         </div>
     </div> -->
+    <link rel='stylesheet' href='/pj_1_travel/css/style.css'>
 </body>
 </html>

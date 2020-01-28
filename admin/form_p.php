@@ -33,4 +33,12 @@ if($ans=="del"){
 }
 if($ans=="update"){
     // здесь происхождит обновление параграфа
+    $sql = "UPDATE info SET content='$p', ordera='$ordera' WHERE id='$id'";
+    if($connect->query($sql)){
+        echo "Запись успешно обновлена";
+    } else {
+        echo "Это фиаско, братан";
+    }
+    $connect->close();
+    exit();
 }

@@ -1,9 +1,9 @@
-footer{
+footer#contacts{
     /* background: linear-gradient(var(--grey) 60%, var(--underwhite), white); */
     background: var(--grey);
     margin: 0 auto;
     width: 1200px;
-    display: flex !important; 
+    display: flex; 
     justify-content: space-between;
     padding: 30px 20px 10px 20px;
     font-family: var(--sans-serif);

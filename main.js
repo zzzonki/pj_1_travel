@@ -98,7 +98,7 @@ cross[0].onclick = () => {
 
 // При клике на вопросы открываются ответы
 
-var flags = []
+var flags = []  
 // У нас массив, в котором есть значения true
 
             for (let i = 0; i < faq_quest.length; i++) {
@@ -310,15 +310,15 @@ function CheckEmpty(el, label_name){
 //       });
 //   });
 
-$(document).ready(function(){  
-    $('.slider').slick({
-        dots: true,
-        infinite: true,
-        speed: 500,
-        fade: true,
-        cssEase: 'linear',
-        arrows: true,
-        autoplay: true,
-        centerMode: true
-    });
-});
+// $(document).ready(function(){  
+//     $('.slider').slick({
+//         dots: true,
+//         infinite: true,
+//         speed: 500,
+//         fade: true,
+//         cssEase: 'linear',
+//         arrows: true,
+//         autoplay: true,
+//         centerMode: true
+//     });
+// });
