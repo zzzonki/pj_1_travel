@@ -110,7 +110,7 @@
 }
 .footer-anim{
     width: calc(100%/3);
-    height: 150px;
+    height: 220px;
     /* margin: 0 auto; */
     display: flex;
     justify-content: space-between;
@@ -126,7 +126,7 @@
 .man-body{
     height: 200px;
     width: 100px;
-    background: url(img/hombre.png) center center / contain no-repeat;
+    background: url(../img/hombre.png) center center / contain no-repeat;
     position: absolute;
     left: 0;
     top: 0;
@@ -136,7 +136,7 @@
 .man-fire{
     height: 30px;
     width: 25px;
-    background: url(img/fuego.png) center center / contain no-repeat;
+    background: url(../img/fuego.png) center center / contain no-repeat;
     position: absolute;
     right: 0px;
     bottom: 20px;
@@ -152,7 +152,7 @@
 .big-cloud{
     width: 100px;
     height: 80px;
-    background: url(img/nube1.png) no-repeat;
+    background: url(../img/nube1.png) no-repeat;
     position: absolute;
     top: 0;
     left: 0;
@@ -168,7 +168,7 @@
 .medium-cloud{
     width: 55px;
     height: 50px;
-    background: url(img/nube3.png) no-repeat;
+    background: url(../img/nube3.png) no-repeat;
     position: absolute;
     top: 0;
     left: 0;
@@ -184,7 +184,7 @@
 .small-cloud{
     width: 36px;
     height: 30px;
-    background: url(img/nube2.png) no-repeat;
+    background: url(../img/nube2.png) no-repeat;
     position: absolute;
     top: 0;
     left: 0;
