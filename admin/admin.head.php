@@ -10,6 +10,7 @@ ECHO "
     <base href='{$_SERVER['HTTP_HOST']}'>
     <link rel='stylesheet' href='/pj_1_travel/css/bulma.min.css'>
     <link rel='stylesheet' href='/pj_1_travel/css/style.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css'>
     <title>Админка</title>
 </head>
 <body>

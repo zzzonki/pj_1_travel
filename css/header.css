@@ -46,6 +46,7 @@
         border-radius: 0 5px 5px 0;
         z-index: 999;
         opacity: 0.5;
+        transition: all 0.5s;
     }
     .side_nav:hover{
         opacity: 1;

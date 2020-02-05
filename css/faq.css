@@ -8,6 +8,7 @@
     margin: 10px 0 40px 0;
 }
 .faq_panel__quest{
+    display: flex;
     color: white;
     background-color: var(--grey);
     font-size: var(--sfs);
@@ -30,6 +31,7 @@
 /* Стрелки для вращения */
 .faq_arrow{
     display: block;
+    margin: auto 10px;
 }
 .faq_arrow__rt{
     transform: rotate(180deg);

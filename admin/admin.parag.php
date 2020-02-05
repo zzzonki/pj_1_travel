@@ -1,5 +1,6 @@
 <?php
 require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/admin/admin.head.php";
+require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/includes/config.inc.php";
 ?>
 <section class="columns has-background-success is-centered">
     <div class="column is-half has-text-centered">
@@ -8,7 +9,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/admin/admin.head.php";
     <p class="has-text-white is-size-5">Введите контент каждого параграфа отдельно</p>
     <figure class="avatar">
         <img src="/pj_1_travel/img/moscow.png">
-        <!-- Сделать так, чтобы картинка подтягивалась с первой карточки -->
+        <!-- //TODO Сделать так, чтобы картинка подтягивалась с первой карточки -->
     </figure>
     <form action="form_p.php" method="GET" class="has-background-light">
         <div class="field">
@@ -42,3 +43,29 @@ require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/admin/admin.head.php";
     </div>
 </section>
 <!-- тут выводтся спрсок параграфов с их id -->
+<div class="columns has-background-success is-centered">
+<div class="column is-half">
+    <table class="table is-bordered">
+        <thead>
+        <tr>
+            <?php
+            foreach ($info_cms as $key => $value) {
+                echo "<th> {$key} </th>";
+            }
+            ?>
+        </tr>
+        </thead>
+        <?php
+        for ($i=0; $i < count($info_cms["id"]); $i++) { 
+            echo "<tr>";
+            echo "<th>{$info_cms['id'][$i]}</th>";
+            echo "<th>{$info_cms['content'][$i]}</th>";
+            echo "<th>{$info_cms['ordera'][$i]}</th>";
+            echo "</tr>";
+        }
+        ?>
+    </table>
+</div>
+</div>
+</body>
+</html>
