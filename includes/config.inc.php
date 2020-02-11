@@ -14,7 +14,7 @@ if($result = $connect->query("SELECT * FROM keywords")){
     $result->close();
 };
 
-if($result = $connect->query("SELECT * FROM anchors")){
+if($result = $connect->query("SELECT * FROM anchors ORDER BY ordera")){
     $anchor = ["Color"=> [], "Path"=> [], "Content"=> [], "Order"=> []];
     while($row = $result->fetch_assoc()){
         array_push($anchor["Color"], $row["color"]);
@@ -51,6 +51,18 @@ if($result = $connect->query("SELECT * FROM cards ORDER BY ordera")){
         array_push($cards_cms["Header"], $row["header"]);
         array_push($cards_cms["Parag"], $row["parag"]);
         array_push($cards_cms["Ordera"], $row["ordera"]);
+    }
+    $result->close();
+};
+
+if($result = $connect->query("SELECT * FROM anchors ORDER BY ordera")){
+    $anchors_cms = ["id"=> [], "color"=> [], "path"=> [], "content"=> [], "ordera"=> []];
+    while($row = $result->fetch_assoc()){
+        array_push($anchors_cms["id"], $row["id"]);
+        array_push($anchors_cms["color"], $row["color"]);
+        array_push($anchors_cms["path"], $row["path"]);
+        array_push($anchors_cms["content"], $row["content"]);
+        array_push($anchors_cms["ordera"], $row["ordera"]);
     }
     $result->close();
 };

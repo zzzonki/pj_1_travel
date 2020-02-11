@@ -11,7 +11,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/includes/config.inc.php";
         <img src="/pj_1_travel/img/kangaroo.png">
         <!-- //TODO Сделать так, чтобы картинка подтягивалась с первой карточки -->
     </figure>
-    <form action="form_p.php" method="GET" class="has-background-light">
+    <form action="form_cards.php" method="POST" class="has-background-light" enctype="multipart/form-data">
         <div class="field">
             <label class="radio">
                 <input type="radio" name="choose" value="ins" reqired>
@@ -38,17 +38,18 @@ require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/includes/config.inc.php";
                 <input type="text" class="input is-medium" placeholder="заголовок" name="header">
 
                 <div class="field">
-                        <label class="label">Загрузите картинку</label>
+                        <label class="label">Загрузите картинку
                     <div class="file is-centered">
-                            <input class="file-input" type="file" name="picture">
+                            <input class="file-input" type="file" name="picture" accept="image/jpg,image/jpeg,image/png>
                             <span class="file-cta">
-                            <span class="file-icon">
-                                <i class="fas fa-upload"></i>
+                                <span class="file-icon">
+                                    <i class="fas fa-upload"></i>
+                                </span>
+                                <span class="file-label">
+                                    Выберите файл   
+                                </span>
                             </span>
-                            <span class="file-label">
-                                Выберите файл   
-                            </span>
-                            </span>
+                        </label>
                     </div>
                 </div>
 

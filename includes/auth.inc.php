@@ -4,7 +4,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/includes/config.inc.php";
 ?>
 <section class="columns is-centered">
     <div class="column is-half">
-    <form action="form_p.php" method="GET" class="has-background-light">
+    <form action="form_p.php" method="POST" class="has-background-light">
         <div class="field">
             <div class="box">
                 <label for="" class="label">Username</label>
