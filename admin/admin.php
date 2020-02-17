@@ -10,9 +10,9 @@
     </section>
         <div class="columns has-background-success">
             <div class="column has-text-centered">
-                <a href="admin.parag.php"><button class="button is-size-4 is-danger">Отредактировать параграфы</button></a>
-                <a href="admin.cards.php"><button class="button is-size-4 is-link">Отредактировать карточки</button></a>
-                <a href="admin.anchor.php"><button class="button is-size-4 is-warning">Отредактировать ссылки</button></a>
+                <a href="'/admin/parag"><button class="button is-size-4 is-danger">Отредактировать параграфы</button></a>
+                <a href="/admin/cards"><button class="button is-size-4 is-link">Отредактировать карточки</button></a>
+                <a href="/admin/anchor"><button class="button is-size-4 is-warning">Отредактировать ссылки</button></a>
             </div>
         </div>
 </body>

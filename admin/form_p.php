@@ -2,10 +2,10 @@
 
 require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/includes/connect.inc.php";
 require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/includes/config.inc.php";
-$ans = $_GET['choose'];
-$id = $_GET['id'];
-$p = $_GET['parag_cont'];
-$ordera = $_GET['ordera'];
+$ans = $_POST['choose'];
+$id = $_POST['id'];
+$p = $_POST['parag_cont'];
+$ordera = $_POST['ordera'];
 
 // В скобках имена инпутов из admin.parag.php
 

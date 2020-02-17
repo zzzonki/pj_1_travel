@@ -7,7 +7,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/includes/config.inc.php";
     <noscript>
         <h2 class="is-danger">Включите javascript, для корректной работы сайта</h2>
     </noscript>
-    <form action="form_reg.php" method="POST" class=" column is-half is-offset-3">
+    <form action="/postreg" method="POST" class=" column is-half is-offset-3">
         <div class="field">
                 <label for="" class="label has-text-white">Имя</label>
                 <div class="control">
@@ -37,5 +37,11 @@ require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/includes/config.inc.php";
         <button class="button is-danger is-medium is-pulled-right" type="submit" id="sub">Отправить данные</button>
     </form>
 </section>
+<?php
+    echo "<script src='http://";
+    echo $_SERVER['HTTP_HOST'];
+    echo "/pj_1_travel/admin/auth/validate.js'>
+    </script>";
+?>
 <script src="validate.js"></script>
 </body>

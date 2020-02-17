@@ -8,10 +8,18 @@ require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/includes/config.inc.php";
 
 $name = $_POST["name"];
 $mail = $_POST["email"];
+
+$name = trim($name);
+$mail = trim($mail); // Обрезка пробелов
+
+$pattern_name = '/\w{3,}/';
+$pattern_mail = '/\w+@\w+\.\w+/';
+$pattern_password = '/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z\d]{8,}/';
+
 $password = $_POST["password"];
 $dubl_password = $_POST["dubl_password"];
 
-if($password==$dubl_password){
+    if(preg_match($pattern_name, $name)&&preg_match($pattern_mail, $mail)&&preg_match($pattern_password, $password)&& $password == $dubl_password){
 
     // все ок
 
@@ -27,7 +35,13 @@ if($password==$dubl_password){
     $password = md5($password);
     $sql = "INSERT INTO users VALUES (NULL, '$name', '$mail', '$password')";
     if($connect->query($sql)){
-        echo "Ты зареган";
+        echo "<h1>Вы успешно зарегестрированы</h1>
+        <script>
+            setTimeout(()=>{
+                window.location.assign('http://localhost/admin')
+            }, 3000)
+        </script>
+        ";
     }
 } else {
     echo "<h1> Ты что, хакер? Уходи. </h1>";

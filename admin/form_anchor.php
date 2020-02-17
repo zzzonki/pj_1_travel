@@ -2,12 +2,12 @@
 
 require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/includes/connect.inc.php";
 require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/includes/config.inc.php";
-$ans = $_GET['choose'];
-$id = $_GET['id'];
-$a_path = $_GET['anchor_path'];
-$p = $_GET['anchor_cont'];
-$ordera = $_GET['ordera'];
-$colors = $_GET['color'];
+$ans = $_POST['choose'];
+$id = $_POST['id'];
+$a_path = $_POST['anchor_path'];
+$p = $_POST['anchor_cont'];
+$ordera = $_POST['ordera'];
+$colors = $_POST['color'];
 
 // В скобках имена инпутов из admin.parag.php
 
