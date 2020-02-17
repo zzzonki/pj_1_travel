@@ -3,7 +3,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/admin/admin.head.php";
 require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/includes/config.inc.php";
 ?>
 <section class="hero is-fullheight is-centered has-background-link">
-    <form action="form_reg.php" method="POST" class=" column is-half is-offset-3">
+    <form action="/postauth" method="POST" class=" column is-half is-offset-3">
         <div class="field">
                 <label for="" class="label">Username</label>
                 <div class="control">
