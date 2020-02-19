@@ -88,7 +88,7 @@
     font-size: calc(var(--sfs)/1.2);
 }
 .info-text__p{
-margin-bottom: var(--sfs);
+    /*margin-bottom: var(--sfs);*/
 }
 /* О нас оригинал 
 .ao-text__p{
