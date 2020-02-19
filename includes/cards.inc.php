@@ -1,16 +1,16 @@
 <?php
 require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/includes/config.inc.php";
+require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/classes/Card.php";
 ECHO "
 <section class='cards'>";
 
-for ($i=0; $i < count($cards["Img"]); $i++) { 
-    ECHO "<div class='card animated zoomIn delay-{$i}s'>
-        <div class='card__img' style='background-image:url({$cards['Img'][$i]})'></div>
-        <h3 class='card__h3'>{$cards["Header"][$i]}</h3>
-        <div class='card__line'></div>
-        <div class='card__p'>{$cards["Parag"][$i]}</div>
-        </div>
-    ";
+for ($i=0; $i < count($cards["Img"]); $i++) {
+    $card = new Card($cards_cms["Id"][$i], $cards_cms["Img"][$i], $cards_cms["Header"][$i], $cards_cms["Parag"][$i], $cards_cms["Ordera"][$i]);
+    ECHO "<div class='card animated zoomIn delay-{$i}s'>";
+        echo $card->img;
+        echo $card->header;
+        echo $card->parag;
+        echo "</div>";
 }
 
 ECHO "
