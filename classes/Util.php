@@ -3,27 +3,27 @@
 
 class Util
 {
-    public static $folder_name = 'pj_1_travel';
+    public static $folder_name = '/pj_1_travel';
     public static function get_full_css($file){
 
         $path = "<link rel='stylesheet' href=
-        http://{$_SERVER['HTTP_HOST']}/".self::$folder_name."/{$file}'>";
+        http://{$_SERVER['HTTP_HOST']}".self::$folder_name."/{$file}'>";
         return $path;
 
     }
     public static  function get_full_js($file){
-        $path = "<script src='http://{$_SERVER['HTTP_HOST']}/".self::$folder_name."/{$file}' defer></script>";
+        $path = "<script src='http://{$_SERVER['HTTP_HOST']}".self::$folder_name."/{$file}' defer></script>";
         return $path;
     }
 
     public static function get_full_favicon($file){
         $path = "<link rel='shortcut icon' href=
-        'http://{$_SERVER['HTTP_HOST']}/".self::$folder_name."/{$file}' type='image/png'> ";
+        'http://{$_SERVER['HTTP_HOST']}".self::$folder_name."/{$file}' type='image/png'> ";
         return $path;
     }
 
     public static function get_full_img($file){
-        $path = "http://{$_SERVER['HTTP_HOST']}/".self::$folder_name."/{$file}";
+        $path = "http://{$_SERVER['HTTP_HOST']}".self::$folder_name."/{$file}";
         return $path;
     }
 
