@@ -17,17 +17,31 @@ class User
         $this->user_name = trim($user_name);
         $this->user_password = hash('sha256', $user_password);
 
-        $login_query = Db::getdbconnect()->query("SELECT FROM users WHERE Name = '$this->user_name'");
+        $login_query = Db::getdbconnect()->query("SELECT password FROM users WHERE name = '$this->user_name'");
 
-        $user = Db::getdbconnect()->fetch_array($login_query);
+        $user = $login_query->fetch_array();
 
-        if ($this->user_password == $user['Password']) {
-            session_start();
+        $row_cnt = $login_query->num_rows;
 
-            $_SESSION['name'] = $this->user_name;
+        if($row_cnt == 1) {
+            if ($this->user_password == $user['password']) {
+                session_start();
 
-        } else {
-            return "Нет пользователя с таким именем";
+                $_SESSION['name'] = $this->user_name;
+
+                echo "<h1>Вы успешно вошли </h1>
+
+            <script>
+                setTimeout(()=>{
+                    window.location.assign('http://localhost/admin');
+                }, 2000)
+            </script>";
+
+            } else {
+                echo "Пароль неверный";
+            }
+        } else{
+            echo "Такого пользователя не существует";
         }
     }
 
@@ -46,7 +60,7 @@ class User
         $this->user_date = date("d-m-Y");
 
         # Проводить валидизацию пароля до его хеширования, а в БД отправлять уже хешированную версию
-        $result = Db::getdbconnect()->query("SELECT * FROM users WHERE Name = '$this->user_name'");
+        $result = Db::getdbconnect()->query("SELECT * FROM users WHERE name = '$this->user_name'");
         //здесь у нас процедурный стиль
         $row_cnt = $result->num_rows;
         if( $row_cnt == 1){
