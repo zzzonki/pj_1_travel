@@ -1,7 +1,8 @@
 <?php
 
 require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/includes/connect.inc.php";
-require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/classes/db.php";
+require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/classes/Db.php";
+require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/classes/Validate.php";
 
 class User
 {
@@ -9,8 +10,7 @@ class User
     private $user_email;
     private $user_password;
     private $user_date; #Дата регистрации пользователя
-    protected $pattern_name = '/\w{3,}/';
-    protected $pattern_mail = '/\w+@\w+\.\w+/';
+
 
     public function login($user_name, $user_password)
     {
@@ -37,6 +37,8 @@ class User
                 }, 2000)
             </script>";
 
+                return true;
+
             } else {
                 echo "Пароль неверный";
             }
@@ -55,9 +57,11 @@ class User
         public function register($name, $email, $password, $dubl_password){
         $this->user_name = trim($name);
         $this->user_email = trim($email);
-        $this->user_password = hash('sha256', $password);
-        $this->dubl_password = hash('sha256', $dubl_password);
-        $this->user_date = date("d-m-Y");
+//        $this->user_password = hash('sha256', $password);
+//        $this->dubl_password = hash('sha256', $dubl_password);
+        $this->user_password = trim($password);
+        $this->dubl_password = trim($dubl_password);
+        $this->user_date = date("Y-m-d");
 
         # Проводить валидизацию пароля до его хеширования, а в БД отправлять уже хешированную версию
         $result = Db::getdbconnect()->query("SELECT * FROM users WHERE name = '$this->user_name'");
@@ -65,13 +69,14 @@ class User
         $row_cnt = $result->num_rows;
         if( $row_cnt == 1){
             echo  "имя используется";
-        } elseif(preg_match($this->pattern_name, $this->user_name) &&
-            preg_match($this->pattern_mail, $this->user_email)
-            &&  $this->user_password == $this->dubl_password){
+        } elseif(Validate::validate_name($this->user_name) &&
+            Validate::validate_email($this->user_email)
+            &&  Validate::validate_password($this->user_password)){
+            $this->user_password = hash('sha256', $this->user_password);
             $sql = "INSERT INTO users VALUES (NULL, '$this->user_name',
             '$this->user_email','$this->user_password', '$this->user_date')";
             //здесь процедурный стиль
-            db::getdbconnect()->query($sql);
+            Db::getdbconnect()->query($sql);
             echo "<h1>Вы успешно зареганы </h1>
         <script>
             setTimeout(()=>{

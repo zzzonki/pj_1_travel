@@ -8,6 +8,7 @@ $id = $_POST['id'];
 $header = $_POST['header'];
 $parag = $_POST['parag_cont'];
 $ordera = $_POST['ordera'];
+$date = date("Y-m-d");
 
 // В скобках имена инпутов из admin.parag.php
 
@@ -36,7 +37,7 @@ if($ans=="ins"){
     }
     
     // здесь будет движение этого файла и показатель, загружен он или нет
-    $sql = "INSERT INTO cards VALUES('$id', '$path', '$header', '$parag', '$ordera')";
+    $sql = "INSERT INTO cards VALUES('$id', '$path', '$header', '$parag', '$ordera', '$date')";
     if($connect->query($sql)){
         echo "Новая карточка успешно загружена $back $back_timer";
     } else {

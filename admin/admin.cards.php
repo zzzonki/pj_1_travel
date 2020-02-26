@@ -11,7 +11,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/includes/config.inc.php";
         <img src="/pj_1_travel/img/kangaroo.png">
         <!-- //TODO Сделать так, чтобы картинка подтягивалась с первой карточки -->
     </figure>
-    <form action="form_cards.php" method="POST" class="has-background-light" enctype="multipart/form-data">
+    <form action="cards_done" method="POST" class="has-background-light" enctype="multipart/form-data">
         <div class="field">
             <label class="radio">
                 <input type="radio" name="choose" value="ins" reqired>
