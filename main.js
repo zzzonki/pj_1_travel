@@ -338,6 +338,9 @@ btn__sort.addEventListener("change", function(){
     xhr.addEventListener("load", function(){
         let data = xhr.responseText
         console.log(data)
+        let cards = document.querySelector(".cards")
+        cards.innerHTML=''
+        cards.insertAdjacentHTML('afterbegin', data)
         that.disabled = false
     })
 })

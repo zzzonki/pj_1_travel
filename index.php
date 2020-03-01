@@ -54,9 +54,8 @@
         <option value="desc">от большего к меньшему</option>
     </select>
 
-    <?php
-    require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/includes/cards.inc.php";
-    ?>
+    <div class="cards"></div>
+
     <section class="form_wrapper animated">
         <h3 class="form__h3">Оставьте заявку</h3>
         <span class="error_message">  </span>

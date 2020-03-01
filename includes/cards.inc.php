@@ -1,3 +1,6 @@
+<!--Файл больше не нужен.
+Его функционал перенесен в handler.php-->
+
 <?php
 require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/includes/config.inc.php";
 require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/classes/Card.php";
