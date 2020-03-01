@@ -1,6 +1,106 @@
 <?php
 require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/admin/admin.head.php";
 require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/includes/config.inc.php";
+require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/classes/Db.php";
+
+if(isset($_POST['choose'])) {
+    echo "hello";
+    $ans = $_POST['choose'];
+    $id = $_POST['id'];
+    $header = $_POST['header'];
+    $parag = $_POST['parag_cont'];
+    $ordera = $_POST['ordera'];
+    $date = date("Y-m-d");
+
+
+    if ($ans == "ins") {
+        // добавить
+        print_r($_FILES);
+        $upload_name = uniqid() . $_FILES['picture']['name']; // Несовершенный код
+        $path = "img/upload_img/$upload_name";
+        $uploaddir = $_SERVER["DOCUMENT_ROOT"] . "/pj_1_travel/img/upload_img/";
+        $uploadfile = $uploaddir . $upload_name;
+
+        // Процесс валидизации размера
+        if ($_FILES['picture']['size'] >= 2000000) {
+            echo "Так много нельзя! Найдите картинку поменьше. $back";
+            die();
+        }
+
+        // Сам процесс перемещения файла на сервер
+        if (move_uploaded_file($_FILES['picture']['tmp_name'], $uploadfile)) {
+            echo "Файл в общем корректный и все работает верно. ";
+        } else {
+            echo "Возможна атака с помощью файловой загрузки. ";
+        }
+
+        // здесь будет движение этого файла и показатель, загружен он или нет
+        $sql = "INSERT INTO cards VALUES('$id', '$path', '$header', '$parag', '$ordera', '$date')";
+        if (Db::getdbconnect()->query($sql)) {
+            echo "Новая карточка успешно загружена $back $back_timer";
+        } else {
+            echo "Это фиаско, братан $back";
+        }
+        exit();
+    }
+    if ($ans == "del") {
+        // удалить
+        $id = trim($id);
+        $sql_path = "SELECT img FROM cards WHERE id='$id'";
+        $result = Db::getdbconnect()->query($sql_path);
+        while ($row = $result->fetch_assoc()) {
+            unlink($_SERVER["DOCUMENT_ROOT"] . "/pj_1_travel/" . $row['img']);
+        }
+        $sql = "DELETE FROM cards WHERE id='$id'";
+        if (Db::getdbconnect()->query($sql)) {
+            echo "Карточка успешно удалена $back $back_timer";
+        } else {
+            echo "Это фиаско, братан $back";
+        }
+        exit();
+    }
+    if ($ans == "update") {
+        // здесь происхождит обновление параграфа
+        $id = trim($id);
+
+        $sql_path = "SELECT img FROM cards WHERE id='$id'";
+        $result = Db::getdbconnect()->query($sql_path);
+        while ($row = $result->fetch_assoc()) {
+            echo "Карточка успешно удалена $back $back_timer";
+            echo "<br>";
+            unlink($_SERVER["DOCUMENT_ROOT"] . "/pj_1_travel/" . $row['img']);
+        }
+
+        // добавить
+        $upload_name = uniqid() . $_FILES['picture']['name']; // Несовершенный код
+        $path = "img/upload_img/{$upload_name}";
+        $uploaddir = $_SERVER["DOCUMENT_ROOT"] . "/pj_1_travel/img/upload_img/";
+        $uploadfile = $uploaddir . $upload_name;
+
+        // Процесс валидизации размера
+        if ($_FILES['picture']['size'] >= 2000000) {
+            echo "Так много нельзя! Найдите картинку поменьше. $back";
+            die();
+        }
+
+        // Сам процесс перемещения файла на сервер
+        if (move_uploaded_file($_FILES['picture']['tmp_name'], $uploadfile)) {
+            echo "Файл в общем корректный и все работает верно. ";
+        } else {
+            echo "Возможна атака с помощью файловой загрузки. ";
+        }
+        $sql = "UPDATE cards SET img='$path', header='$header', parag='$parag', ordera='$ordera' WHERE id='$id'";
+
+
+        if ($connect->query($sql)) {
+            echo "Запись успешно обновлена $back $back_timer";
+        } else {
+            echo "Это фиаско, братан $back";
+        }
+        $connect->close();
+        exit();
+    }
+}
 ?>
 <section class="columns has-background-success is-centered">
     <div class="column is-half has-text-centered">
@@ -11,7 +111,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/includes/config.inc.php";
         <img src="/pj_1_travel/img/kangaroo.png">
         <!-- //TODO Сделать так, чтобы картинка подтягивалась с первой карточки -->
     </figure>
-    <form action="cards_done" method="POST" class="has-background-light" enctype="multipart/form-data">
+    <form method="POST" class="has-background-light" enctype="multipart/form-data">
         <div class="field">
             <label class="radio">
                 <input type="radio" name="choose" value="ins" reqired>
@@ -40,7 +140,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/includes/config.inc.php";
                 <div class="field">
                         <label class="label">Загрузите картинку
                     <div class="file is-centered">
-                            <input class="file-input" type="file" name="picture" accept="image/jpg,image/jpeg,image/png>
+                            <input class="file-input" type="file" name="picture" accept="image/jpg,image/jpeg,image/png">
                             <span class="file-cta">
                                 <span class="file-icon">
                                     <i class="fas fa-upload"></i>

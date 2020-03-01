@@ -1,7 +1,10 @@
+<!--Файл больше не нужен, все его содержимое переписано в admin_cards.php
+В дальнейшем можно переписать код оттуда сюда и подтянуть через require-->
 <?php
 
 require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/includes/connect.inc.php";
 require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/includes/config.inc.php";
+require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/classes/Db.php";
 
 $ans = $_POST['choose'];
 $id = $_POST['id'];

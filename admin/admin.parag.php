@@ -1,6 +1,7 @@
 <?php
 require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/admin/admin.head.php";
-require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/includes/config.inc.php";
+require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/admin/form_p.php";
+//Добавил form_p через require, чтобы не перегружать файл текстом и чтобы попробовать.
 ?>
 <section class="columns has-background-success is-centered">
     <div class="column is-half has-text-centered">
@@ -11,7 +12,7 @@ require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/includes/config.inc.php";
         <img src="/pj_1_travel/img/moscow.png">
         <!-- //TODO Сделать так, чтобы картинка подтягивалась с первой карточки -->
     </figure>
-    <form action="form_p.php" method="POST" class="has-background-light">
+    <form method="POST" class="has-background-light">
         <div class="field">
             <label class="radio">
                 <input type="radio" name="choose" value="ins" reqired>

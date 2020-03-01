@@ -322,3 +322,22 @@ function CheckEmpty(el, label_name){
 //         centerMode: true
 //     });
 // });
+
+// Реализация AJAX
+
+let btn__sort = document.querySelector(".btn__sort")
+btn__sort.addEventListener("change", function(){
+    console.log(btn__sort.value)
+    this.disabled = true
+    let xhr = new XMLHttpRequest()
+    xhr.open('GET', `http://localhost/pj_1_travel/handler.php`)
+    xhr.send()
+
+    let that = this
+
+    xhr.addEventListener("load", function(){
+        let data = xhr.responseText
+        console.log(data)
+        that.disabled = false
+    })
+})

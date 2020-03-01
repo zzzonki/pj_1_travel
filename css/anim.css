@@ -54,7 +54,7 @@
     }
 }
 .footer__logo{
-    animation: rotate 1s ease-in-out infinite alternate ;
+    animation: rotate 4s ease-in-out infinite alternate ;
 }
 .footer__logo:hover{
     animation-play-state: paused;

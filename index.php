@@ -48,6 +48,12 @@
             <p>Мягкий песок на пляже</p>
         </div>
      </div> -->
+
+    <select class="btn__sort">
+        <option value="asc">от меньшего к большему</option>
+        <option value="desc">от большего к меньшему</option>
+    </select>
+
     <?php
     require $_SERVER["DOCUMENT_ROOT"]."/pj_1_travel/includes/cards.inc.php";
     ?>
