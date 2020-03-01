@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Фев 21 2020 г., 22:49
+-- Время создания: Мар 01 2020 г., 23:30
 -- Версия сервера: 10.4.11-MariaDB
 -- Версия PHP: 7.4.1
 
@@ -58,16 +58,21 @@ CREATE TABLE `cards` (
   `id` int(11) NOT NULL,
   `img` varchar(100) NOT NULL,
   `header` varchar(100) NOT NULL,
-  `parag` text NOT NULL,
-  `ordera` int(11) NOT NULL
+  `parag` int(11) NOT NULL,
+  `ordera` int(11) NOT NULL,
+  `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `cards`
 --
 
-INSERT INTO `cards` (`id`, `img`, `header`, `parag`, `ordera`) VALUES
-(10, 'img/upload_img/5e3b0e42d8f22kangaroo.png', 'Путешествия по России!', 'Медведи, балалайки, etc...', 11);
+INSERT INTO `cards` (`id`, `img`, `header`, `parag`, `ordera`, `date`) VALUES
+(10, 'img/upload_img/5e3b0e42d8f22kangaroo.png', 'Путешествия по России!', 500, 11, '0000-00-00'),
+(17, 'img/upload_img/5e54068221cbbpyramids.png', 'Путешествия по Европе!', 2000, 15, '0000-00-00'),
+(19, 'img/upload_img/5e5407d2b04a8north-america.png', 'Путешествия по Южной Америке!', 1000, 20, '0000-00-00'),
+(20, 'img/upload_img/5e5bea4918fb5', 'Путешествия по  Африке!', 1100, 25, '2020-02-26'),
+(21, 'img/upload_img/5e5bf1c6b9006moscow.png', 'Берлин', 1500, 1, '2020-03-01');
 
 -- --------------------------------------------------------
 
@@ -129,7 +134,8 @@ CREATE TABLE `info` (
 INSERT INTO `info` (`id`, `content`, `ordera`) VALUES
 (2, 'Повседневная практика показывает, что выбранный нами инновационный путь проверки влечёт за собой интересный процесс внедрения модернизации укрепления демократической системы. Повседневная практика показывает, что социально-экономическое развитие играет важную роль в формировании системы обучения кадров, соответствующей насущным потребностям. Равным образом постоянный количественный рост и сфера нашей активности требует определения и уточнения модели развития.', 10),
 (3, 'Разнообразный и богатый опыт высокотехнологичная концепция общественной системы позволяет оценить значение представляет собой интересный эксперимент систему массового участия. Равным образом сложившаяся структура организации способствует подготовке и реализации соответствующих условий активизации.', 15),
-(4, 'Повседневная практика показывает, что начало повседневной работы по формированию позиции обеспечивает актуальность поэтапного и последовательного развития общества.', 20);
+(4, 'Повседневная практика показывает, что начало повседневной работы по формированию позиции обеспечивает актуальность поэтапного и последовательного развития общества.', 20),
+(106, 'asfdgfsdhgjkh', 25);
 
 -- --------------------------------------------------------
 
@@ -218,7 +224,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `date`) VALUES
-(8, 'Qwerty', 'qwerty@q.q', '77aae185203edc6357676db95caa25d0f398d402c1723e6a7b42cfe8d2967f2e', '0000-00-00');
+(8, 'Qwerty', 'qwerty@q.q', '77aae185203edc6357676db95caa25d0f398d402c1723e6a7b42cfe8d2967f2e', '0000-00-00'),
+(9, 'Qqq', 'qqq@qq.q', '77aae185203edc6357676db95caa25d0f398d402c1723e6a7b42cfe8d2967f2e', '0000-00-00'),
+(10, 'name', 'name@name.n', 'cdaccaa1d5864d6c5cf0cda37ddb06bfc340fb0624479012a3bd4df768aa4085', '0000-00-00'),
+(11, 'Newser', 'newswe@new.new', '506612c95ea7433ea7b76e3fbb62db77c140550386ac0c87975508a876f2bc0e', '2020-02-24');
 
 --
 -- Индексы сохранённых таблиц
@@ -286,13 +295,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `anchors`
 --
 ALTER TABLE `anchors`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT для таблицы `cards`
 --
 ALTER TABLE `cards`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT для таблицы `faq`
@@ -310,7 +319,7 @@ ALTER TABLE `headers`
 -- AUTO_INCREMENT для таблицы `info`
 --
 ALTER TABLE `info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
 
 --
 -- AUTO_INCREMENT для таблицы `keywords`
@@ -334,7 +343,7 @@ ALTER TABLE `places`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
