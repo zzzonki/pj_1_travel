@@ -29,7 +29,8 @@ class User
 
                 $_SESSION['name'] = $this->user_name;
 
-                echo "<h1>Вы успешно вошли </h1>
+                echo "<h1>Вы успешно вошли ".$_SESSION['name']."</h1>;
+                
 
             <script>
                 setTimeout(()=>{
